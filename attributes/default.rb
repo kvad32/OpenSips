@@ -1,0 +1,6 @@
+default['opensips']['domain'] = "kvad.internal"
+default['opensips']['dbengine'] = "MYSQL"
+default['opensips']['dbhost'] = "localhost"
+default['opensips']['dbname'] = "opensips"
+default['opensips']['dbuser'] = "root"
+default['opensips']['dbpassword'] = ""

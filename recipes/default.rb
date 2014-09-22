@@ -44,7 +44,7 @@ bash 'compile_and_install' do
   cd /opt/opensips
   make prefix=/ include_modules="db_mysql, dialplan, presence, presence_xml, \
               presence_mwi, presence_dialoginfo, pua, pua_bla, pua_mi, pua_usrloc, \
-              pua_xmpp, pua_dialoginfo, mi_xmlrpc, xcap"
+              pua_xmpp, pua_dialoginfo, mi_xmlrpc, xcap" modules
   make prefix=/ install
   EOC
   action :nothing
@@ -62,4 +62,12 @@ cookbook_file "/etc/default/opensips" do
   owner "root"
   group "root"
   source "opensips.default"
+end
+
+# OpenSips ctrl files
+template "/etc/opensips/opensipsctlrc" do
+  owner "root"
+  group "root"
+  mode 0644
+  source "opensipsctlrc.erb"
 end
